@@ -10,6 +10,10 @@
 ********************************************************************************************/
 
 #include "raylib.h"
+#include "HashFunction.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
 
 int main()
 {
@@ -18,9 +22,21 @@ int main()
 	int screenWidth = 800;
 	int screenHeight = 450;
 
+
+
+
+
 	InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
 	SetTargetFPS(60);
+
+
+	unsigned int hashValue = HashFunction::defaultHash("shawn", 5);
+
+
+
+	std::cout /*<< std::hex */<< hashValue << std::endl;
+
 	//--------------------------------------------------------------------------------------
 
 	// Main game loop
@@ -37,7 +53,7 @@ int main()
 
 		ClearBackground(RAYWHITE);
 
-		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+
 
 		EndDrawing();
 		//----------------------------------------------------------------------------------
